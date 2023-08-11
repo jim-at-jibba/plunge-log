@@ -1,8 +1,8 @@
 import { styled, YStack } from "tamagui";
 
 export const Container = styled(YStack, {
-  name: "MyStack",
-  backgroundColor: "$backgroundStrong",
+  name: "Container",
+  backgroundColor: "white",
   flex: 1,
   justifyContent: "space-between",
   padding: "$4",
