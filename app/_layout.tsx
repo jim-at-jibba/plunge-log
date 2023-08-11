@@ -37,7 +37,7 @@ export default function Layout() {
             value={colorScheme === "light" ? DefaultTheme : DarkTheme}
           >
             <View style={{ marginTop: top, flex: 1 }}>
-              <Stack initialRouteName="home">
+              <Stack>
                 <Stack.Screen
                   name="(tabs)"
                   options={{
