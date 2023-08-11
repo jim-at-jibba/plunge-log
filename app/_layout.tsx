@@ -1,5 +1,6 @@
 import { Suspense, useEffect } from "react";
-import { useColorScheme } from "react-native";
+import { useColorScheme, View } from "react-native";
+import { useSafeAreaInsets } from "react-native-safe-area-context";
 import {
   DarkTheme,
   DefaultTheme,
@@ -9,13 +10,13 @@ import { useFonts } from "expo-font";
 import { SplashScreen, Stack } from "expo-router";
 import { TamaguiProvider, Text, Theme } from "tamagui";
 
-import { MySafeAreaView } from "../components/MySafeAreaView";
 import config from "../tamagui.config";
 
 SplashScreen.preventAutoHideAsync();
 
 export default function Layout() {
   const colorScheme = useColorScheme();
+  const { top } = useSafeAreaInsets();
 
   const [loaded] = useFonts({
     Inter: require("@tamagui/font-inter/otf/Inter-Medium.otf"),
@@ -35,13 +36,16 @@ export default function Layout() {
           <ThemeProvider
             value={colorScheme === "light" ? DefaultTheme : DarkTheme}
           >
-            <MySafeAreaView>
-              <Stack
-                screenOptions={{
-                  headerShown: false
-                }}
-              />
-            </MySafeAreaView>
+            <View style={{ marginTop: top, flex: 1 }}>
+              <Stack initialRouteName="home">
+                <Stack.Screen
+                  name="(tabs)"
+                  options={{
+                    headerShown: false
+                  }}
+                />
+              </Stack>
+            </View>
           </ThemeProvider>
         </Theme>
       </Suspense>
