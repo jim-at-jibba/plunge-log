@@ -1,6 +1,7 @@
 import { useSafeAreaInsets } from "react-native-safe-area-context";
-import { MaterialCommunityIcons } from "@expo/vector-icons";
-import { H1, Stack, Text, XStack, YStack } from "tamagui";
+import { H1, Text, XStack, YStack } from "tamagui";
+
+import HomeHeaderInfoBox from "./HeaderInfoBox";
 
 export default function HomeHeader() {
   const { top } = useSafeAreaInsets();
@@ -36,38 +37,16 @@ export default function HomeHeader() {
           mt="$6"
           space="$8"
         >
-          <YStack>
-            <Stack mb="$2">
-              <MaterialCommunityIcons
-                name="heart-pulse"
-                size={20}
-                color="white"
-              />
-            </Stack>
-            <Text
-              mb="$1"
-              fontWeight="700"
-            >
-              77 BPM
-            </Text>
-            <Text fontSize="$2">Average heart rate</Text>
-          </YStack>
-          <YStack>
-            <Stack mb="$2">
-              <MaterialCommunityIcons
-                name="timer-outline"
-                size={20}
-                color="white"
-              />
-            </Stack>
-            <Text
-              mb="$1"
-              fontWeight="700"
-            >
-              25 min
-            </Text>
-            <Text fontSize="$2">Time in cold water</Text>
-          </YStack>
+          <HomeHeaderInfoBox
+            iconName="heart-outline"
+            text="77 BPM"
+            subText="Average heart rate"
+          />
+          <HomeHeaderInfoBox
+            iconName="timer-outline"
+            text="25 min"
+            subText="Time in cold water"
+          />
         </XStack>
       </YStack>
     </YStack>
