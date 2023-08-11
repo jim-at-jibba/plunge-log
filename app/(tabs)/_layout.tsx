@@ -1,6 +1,6 @@
 import React from "react";
 import { Platform, Text, View } from "react-native";
-import { SimpleLineIcons } from "@expo/vector-icons";
+import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { BottomTabBar } from "@react-navigation/bottom-tabs";
 import { BlurView } from "expo-blur";
 import { Tabs } from "expo-router";
@@ -42,7 +42,7 @@ export default function TabsLayout() {
               }}
             >
               <TabBarIcon
-                name="home"
+                name="home-outline"
                 color={color}
                 size={24}
               />
@@ -71,7 +71,7 @@ export default function TabsLayout() {
               }}
             >
               <TabBarIcon
-                name="notebook"
+                name="notebook-outline"
                 color={color}
                 size={24}
               />
@@ -100,7 +100,7 @@ export default function TabsLayout() {
               }}
             >
               <TabBarIcon
-                name="user"
+                name="account-settings-outline"
                 color={color}
                 size={24}
               />
@@ -116,12 +116,12 @@ export default function TabsLayout() {
 }
 
 function TabBarIcon(props: {
-  name: React.ComponentProps<typeof SimpleLineIcons>["name"];
+  name: React.ComponentProps<typeof MaterialCommunityIcons>["name"];
   color: string;
   size?: number;
 }) {
   return (
-    <SimpleLineIcons
+    <MaterialCommunityIcons
       size={props.size || 26}
       style={{ marginBottom: -3 }}
       {...props}
