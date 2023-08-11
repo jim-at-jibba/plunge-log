@@ -36,10 +36,7 @@ export default function Layout() {
           <ThemeProvider
             value={colorScheme === "light" ? DefaultTheme : DarkTheme}
           >
-            <YStack
-              flex={1}
-              marginTop={top}
-            >
+            <YStack flex={1}>
               <Stack>
                 <Stack.Screen
                   name="(tabs)"
