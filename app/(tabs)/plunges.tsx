@@ -1,14 +1,14 @@
 import { ArrowLeft } from "@tamagui/lucide-icons";
 import { useRouter } from "expo-router";
-import { Button, H3, H6, XStack } from "tamagui";
+import { Button, H3, H6, XStack, YStack } from "tamagui";
 
-import { MyStack } from "../../components/MyStack";
+import { Container } from "../../components/Container";
 
-export default function User() {
+export default function Plunge() {
   const router = useRouter();
 
   return (
-    <MyStack justifyContent="flex-start">
+    <Container justifyContent="flex-start">
       <XStack
         alignItems="center"
         space="$2"
@@ -17,10 +17,13 @@ export default function User() {
           icon={ArrowLeft}
           onPress={router.back}
         />
-        <H3>Plunges</H3>
+        <XStack space>
+          <H3>Plunges</H3>
+          <H3>Plunges</H3>
+        </XStack>
       </XStack>
 
       <H6>Here are your plunges</H6>
-    </MyStack>
+    </Container>
   );
 }

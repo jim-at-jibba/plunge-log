@@ -8,7 +8,7 @@ import {
 } from "@react-navigation/native";
 import { useFonts } from "expo-font";
 import { SplashScreen, Stack } from "expo-router";
-import { TamaguiProvider, Text, Theme } from "tamagui";
+import { TamaguiProvider, Text, Theme, YStack } from "tamagui";
 
 import config from "../tamagui.config";
 
@@ -36,7 +36,10 @@ export default function Layout() {
           <ThemeProvider
             value={colorScheme === "light" ? DefaultTheme : DarkTheme}
           >
-            <View style={{ marginTop: top, flex: 1 }}>
+            <YStack
+              flex={1}
+              marginTop={top}
+            >
               <Stack>
                 <Stack.Screen
                   name="(tabs)"
@@ -45,7 +48,7 @@ export default function Layout() {
                   }}
                 />
               </Stack>
-            </View>
+            </YStack>
           </ThemeProvider>
         </Theme>
       </Suspense>
